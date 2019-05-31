@@ -61,7 +61,7 @@ $receiver=$_GET["receiver"];
   border: 2px dotted gray;
 }
 #messageboxes{
-  position:fixed;
+  position:relative;
   overflow:scroll;
   top:0;
   width:100%;
@@ -95,6 +95,7 @@ $receiver=$_GET["receiver"];
       var html = '<div class="receiver t">'+data[i].message+'<div class="info">'+data[i].sender+'</div></div>';
     }
       $("#messageboxes").append(html);
+      window.scrollTo(0,document.body.scrollHeight);
       if(i==data.length-1){
         $("#last_id").val(data[i].id);
         break;
