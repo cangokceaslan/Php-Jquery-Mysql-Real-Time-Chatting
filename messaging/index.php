@@ -89,6 +89,9 @@ $receiver=$_GET["receiver"];
   //$("messagebox").preventDefault();
   function appendData(data,sender,receiver){
     for(var i = 0; i <= data.length; i++){
+      if(data[0] == null){
+        $("#last_id").val(0);
+      }
       if(sender == data[i].sender){
       var html = '<div class="sender t">'+data[i].message+'<div class="info">'+data[i].sender+'</div></div>';
     }else{
